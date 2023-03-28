@@ -43,6 +43,7 @@ class PaidSubscriber(Subscriber):
 
 def main():
     data_science_channel = Channel('DataScience')
+    cooking_channel = Channel('Cooking-101')
     
     sub_1 = PaidSubscriber('sub_1')
     sub_2 = PaidSubscriber('sub_2')
@@ -52,7 +53,11 @@ def main():
     data_science_channel.subscribe(sub_2)
     data_science_channel.subscribe(sub_3)
 
+    cooking_channel.subscribe(sub_1)
+    cooking_channel.subscribe(sub_3)
+
     data_science_channel.notify('New video released on PCA!')
+    cooking_channel.notify('Lets learn to cook rice today!')
 
 
 if __name__ == '__main__':
