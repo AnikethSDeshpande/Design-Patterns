@@ -2,12 +2,14 @@
     Singleton design pattern is used to ensure only one instance of class is created.
 '''
 
+from __future__ import annotations
+
 
 class App:
     __instance = None
 
     @staticmethod
-    def get_instance():
+    def get_instance() -> App:
         if not App.__instance:
             App.__instance = App('Default', 'This is the default app created.')
         return App.__instance
